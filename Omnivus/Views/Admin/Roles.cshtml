@@ -1,0 +1,46 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<IdentityRole>
+
+@{
+    ViewData["Title"] = "Admin";
+    ViewData["ShowNavBar"] = true;
+}
+
+<section class="page-headline">
+    <div class="content-no-headline"></div>
+</section>
+
+<section class="users-content">
+    <div class="container">
+        <div class="col-3 center">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Role
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var role in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => @role.Name)
+                            </td>
+                            <td>
+                                @if (role.Name != "admin")
+                                {
+                                    <a class="role-link" asp-action="EditRole" asp-route-id="@role.Id">Edit</a> <span>|</span>
+                                    <a asp-action="DeleteRole" asp-route-id="@role.Id">Delete</a>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <a asp-action="AddRole">Add role</a>
+        </div>
+    </div>
+</section>

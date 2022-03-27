@@ -1,0 +1,73 @@
+﻿@model EditUserViewModel
+@{
+    ViewData["Title"] = "Admin";
+    ViewData["ShowNavBar"] = true;
+}
+@section Scripts {
+    <script src="~/js/validate.js"></script>
+    <script src="~/js/validate_edit_user.js"></script>
+}
+<section class="page-headline">
+    <div class="content-no-headline"></div>
+</section>
+
+<section class="edit-user-content">
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            <div class="col-8">
+                <form asp-action="EditUser">
+                    <div class="form-group col-12">
+                        <label asp-for="Role" class="control-label">Role</label>
+                        <select asp-for="Role" asp-items="Model.Roles" class="form-control"></select>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-group col-6 edit-user-firstname">
+                            <div class="input-box">
+                                <label asp-for="FirstName" class="control-label">First name</label>
+                                <input id="firstname" asp-for="FirstName" class="form-control" />
+                                <small>Error</small>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-6 edit-user-lastname">
+                            <div class="input-box">
+                                <label asp-for="LastName" class="control-label">Last name</label>
+                                <input id="lastname" asp-for="LastName" class="form-control" />
+                                <small>Error</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <div class="input-box">
+                            <label asp-for="Street" class="control-label">Street</label>
+                            <input id="street" asp-for="Street" class="form-control" />
+                            <small>Error</small>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <div class="form-group col-3 edit-user-postcode">
+                            <div class="input-box">
+                                <label asp-for="PostCode" class="control-label">Postcode</label>
+                                <input id="postcode" asp-for="PostCode" class="form-control" />
+                                <small>Error</small>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-9 edit-user-city">
+                            <div class="input-box">
+                                <label asp-for="City" class="control-label">City</label>
+                                <input id="city" asp-for="City" class="form-control" />
+                                <small>Error</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group d-grid mt-4">
+                        <input id="submitform" type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

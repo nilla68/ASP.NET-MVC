@@ -1,0 +1,67 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Omnivus.Data
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<header>
+    <div class="container">
+
+        <div class="nav-grid">
+
+            <div class="nav-left">
+                <div class="nav-logo">
+                    <h1>OmniVus.</h1>
+                    <p>IT Service & Technology</p>
+                </div>
+            </div>
+
+            <div class="nav-right container-fluid">
+                <div class="nav-top-menu">
+                    @if (!SignInManager.IsSignedIn(User))
+                    {
+                        <a href="mailto:info@domain.com">info@domain.com</a>
+                    }
+                    else
+                    {
+                        <a asp-controller="profile" asp-action="index">Welcome @User.FindFirst("DisplayName").Value</a>
+                    }
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <div class="social-media">
+                            @if (User.FindFirst("http://schemas.microsoft.com/ws/2008/06/identity/claims/role")?.Value == "admin")
+                            {
+                                <a asp-controller="Admin" asp-action="Users">Users</a>
+                                <a asp-controller="Admin" asp-action="Roles">Roles</a>
+                            }
+                            <a asp-controller="Auth" asp-action="LogOut">Logout</a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="social-media">
+                            <a href="https://facebook.com">facebook</a>
+                            <a href="https://twitter.com">twitter</a>
+                            <a href="https://linkedin.com">linkedin</a>
+                            <a href="https://youtube.com">youtube</a>
+                        </div>
+                    }
+                </div>
+
+                <div class="nav-main-menu">
+                    <div class="nav-menu-items">
+                        <a asp-area="" asp-controller="Home" asp-action="Index" class="menu-item">Home</a>
+                        <a asp-area="" asp-controller="Home" asp-action="Services" class="menu-item">Services</a>
+                        <a asp-area="" asp-controller="Home" asp-action="Contact" class="menu-item">Contact</a>
+                        @if (!SignInManager.IsSignedIn(User))
+                        {
+                            <a asp-controller="Auth" asp-action="Login" class="btn btn-main">Login</a>
+                        }
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>

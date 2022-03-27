@@ -1,0 +1,70 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Omnivus.Data
+@using Omnivus.Helpers
+@model IEnumerable<ApplicationUser>
+@inject AddressManager _addressManager
+@inject UserManager<ApplicationUser> _userManager
+
+@{
+    ViewData["Title"] = "Admin";
+    ViewData["ShowNavBar"] = true;
+}
+
+<section class="page-headline">
+    <div class="content-no-headline"></div>
+</section>
+
+<section class="users-content">
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Role
+                    </th>
+                    <th>
+                        First name
+                    </th>
+                    <th>
+                        Last name
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th>
+                        Address
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    var address = await _addressManager.GetAddressAsync(user);
+                    var role = (await _userManager.GetRolesAsync(user)).FirstOrDefault();
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => @role)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => user.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => user.LastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => user.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => address.Street), @Html.DisplayFor(modelItem => address.PostCode) @Html.DisplayFor(modelItem => address.City)
+                        </td>
+                        <td>
+                            <a asp-action="EditUser" asp-route-id="@user.Id">Edit</a> |
+                            <a asp-action="DeleteUser" asp-route-id="@user.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>

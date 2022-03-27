@@ -1,0 +1,33 @@
+﻿@model EditRoleViewModel
+@{
+    ViewData["Title"] = "Admin";
+    ViewData["ShowNavBar"] = true;
+}
+@section Scripts {
+    <script src="~/js/validate.js"></script>
+    <script src="~/js/validate_role.js"></script>
+}
+<section class="page-headline">
+    <div class="content-no-headline"></div>
+</section>
+
+<section class="edit-user-content">
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            <div class="col-8">
+                <form asp-action="EditRole">
+                    <div class="form-group col-6 edit-user-firstname">
+                        <div class="input-box">
+                            <label asp-for="RoleName" class="control-label">Role name</label>
+                            <input id="rolename" asp-for="RoleName" class="form-control" />
+                            <small>Error</small>
+                        </div>
+                    </div>
+                    <div class="form-group d-grid mt-4">
+                        <input id="submitform" type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

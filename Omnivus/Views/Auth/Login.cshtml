@@ -1,0 +1,46 @@
+﻿@model LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+    ViewData["ShowNavBar"] = true;
+}
+@section Scripts {
+    <script src="~/js/validate.js"></script>
+    <script src="~/js/validate_login.js"></script>
+    @*<script src="~/js/validate_email.js"></script>
+    <script src="~/js/validate_password.js"></script>*@
+}
+
+<section class="page-headline">
+    <div class="content-no-headline"></div>
+</section>
+
+<section class="auth-content">
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            <div class="col-6">
+                <form asp-action="Login" asp-route-returnUrl="@Model.ReturnUrl" onsubmit="return validateFormOnSubmit();">
+                    <div class="form-group">
+                        <div class="input-box">
+                            <label asp-for="UserName" class="control-label">Email</label>
+                            <input id="email" asp-for="UserName" class="form-control" />
+                            <small>Error</small>
+                        </div>
+                    </div>
+                    <div class="form-group mt-2">
+                        <div class="input-box">
+                            <label asp-for="Password" class="control-label"></label>
+                            <input id="password" asp-for="Password" class="form-control" type="password" />
+                            <small>Error</small>
+                        </div>
+                    </div>
+                    <div class="form-group d-grid mt-4">
+                        <input id="submitform" type="submit" value="Login" class="btn btn-primary" />
+                    </div>
+                </form>
+                <div class="form-group mt-4">
+                    <a asp-controller="Auth" asp-action="Register">Not a member? Register here.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,73 @@
+﻿@model ContactViewModel
+@{
+    ViewData["Title"] = "Contact";
+    ViewData["ShowNavBar"] = true;
+}
+
+@section Scripts {
+    <script src="~/js/validate.js"></script>
+    @*<script src="~/js/validate_name.js"></script>
+    <script src="~/js/validate_email.js"></script>
+    <script src="~/js/validate_message.js"></script>*@
+    <script src="~/js/validate_contact.js"></script>
+}
+
+<section class="page-headline">
+    <div class="content">
+        <h1>Contact Us</h1>
+
+        <div class="links">
+            <a asp-controller="Home" asp-action="Index">Home</a>
+            <span> | </span>
+            <a asp-controller="Home" asp-action="Contact">Contact</a>
+        </div>
+
+    </div>
+</section>
+
+<section class="get-in-touch">
+    <div class="container">
+
+        <div class="get-in-touch-content">
+
+            <div class="get-in-touch-content-left">
+
+                <div class="get-in-touch-section-headline">
+                    <div class="get-in-touch-section-headline-text">Get in Touch</div>
+                    <div class="get-in-touch-section-headline-line"></div>
+                </div>
+
+                <h2>Estimate for your<br>projects.</h2>
+                <form method="post" onsubmit="return validateFormOnSubmit();">
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <div class="form-group input-box">
+                        <input id="name" type="text" asp-for="Name" class="form-control" placeholder="Enter your name">
+                        @*<small> <span asp-validation-for="Name" class="text-danger"></span> </small>*@
+                        <small></small>
+                    </div>
+
+                    <div class="form-group input-box">
+                        <input id="email" type="email" asp-for="Email" class="form-control" placeholder="Enter your email">
+                        @*<small> <span asp-validation-for="Email" class="text-danger"></span> </small>*@
+                        <small></small>
+                    </div>
+
+                    <div class="form-group input-box">
+                        <textarea id="message" asp-for="Message" class="form-control" rows="6" placeholder="Enter your message"></textarea>
+                        <small></small>
+                    </div>
+
+                    <div class="get-in-touch-submit">
+                        <input id="submitform" type="submit" class="btn btn-main" value="Submit Now">
+                    </div>
+                </form>
+            </div>
+
+            <div class="get-in-touch-content-right">
+                <img src="~/img/contact-right.svg">
+            </div>
+
+        </div>
+
+    </div>
+</section>

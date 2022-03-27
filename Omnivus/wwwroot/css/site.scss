@@ -1,0 +1,867 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;600;700&family=Montserrat:wght@400;600;700&family=Poppins:wght@100;400;700&family=Roboto:wght@400;700&display=swap');
+
+// FONT FAMILY
+$karla-font: 'Karla', sans-serif;
+$montserrat-font: 'Montserrat', sans-serif;
+$roboto-font: 'Roboto', sans-serif;
+
+// COLOURS
+$darkblue-colour: #002249;
+$footer-darkblue-colour: #00152E;
+$blue-colour: #006de8;
+$darkgray-colour: #6C90B9;
+$teal-colour: #69A1BB;
+$gray-colour: #a0b6d0;
+$cream-colour: #f5faff;
+$white-colour: #ffffff;
+$blue-line-colour: #99C2F6;
+$lightgray-colour: #A1BBD7;
+$bg-dark-colour: #00152D;
+$bookmeetingcolour: #C1D0DE;
+$footer-text: #C2D1E2;
+$form-bg-colour: #001222;
+$form-border-colour: #6B93AA;
+$form-text-colour: #C1D0DE;
+$contact-bg-colour: #F7FCFF;
+$card-bg-colour: #C1C1C1;
+$btn-intro-video-colour: #B7C3D6;
+$btn-hover-colour: #0052af;
+
+body {
+    font-family: $karla-font;
+    color: $darkblue-colour;
+}
+
+.container {
+    padding: 0;
+}
+
+header {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+}
+
+a {
+    color: $darkgray-colour;
+    text-decoration: none;
+
+    &:hover {
+        color: $darkblue-colour;
+    }
+}
+
+.btn {
+    border-radius: 0;
+    padding: 1rem 2.55rem;
+}
+
+.btn-main {
+    color: $white-colour;
+    background-color: $blue-colour;
+    border-color: $blue-colour;
+
+    &:hover {
+        color: $white-colour;
+        background-color: $darkblue-colour;
+    }
+}
+
+.btn-intro-video {
+    margin-left: 20px;
+    color: $white-colour;
+    background-color: $btn-intro-video-colour;
+    border-color: $btn-intro-video-colour;
+
+    .btn-intro-video:hover {
+        color: $white-colour;
+        background-color: $btn-hover-colour;
+    }
+}
+
+.bg-blue-gradient {
+    padding-top: 140px;
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 5%, rgba(169,199,236,1) 100%);
+}
+
+// NAVBAR TOP START
+.nav-grid {
+    display: flex;
+    justify-content: space-between;
+
+    .nav-left .nav-logo {
+        background-color: $white-colour;
+        padding: 30px 40px;
+
+        h1 {
+            font-family: $montserrat-font;
+            font-size: 40px;
+            font-weight: 600;
+        }
+
+        p {
+            font-family: $karla-font;
+            font-size: 15px;
+            line-height: 0.5;
+            color: $darkgray-colour;
+            text-align: center;
+        }
+    }
+
+    .nav-right {
+        margin-left: 90px;
+
+        .nav-top-menu {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: $blue-line-colour solid 1px;
+            padding: 20px 0px;
+
+            .social-media a {
+                padding-left: 10px;
+            }
+        }
+
+        .nav-main-menu {
+            justify-content: end;
+            display: flex;
+            margin-top: 20px;
+
+            .menu-item {
+                padding-left: 65px;
+            }
+
+            .nav-menu-items .btn {
+                margin-left: 25px;
+            }
+        }
+    }
+}
+
+// SHOWCASE 
+.showcase {
+    position: relative;
+    z-index: 3;
+
+    .showcase-content {
+        display: flex;
+        margin-left: 75px;
+
+        .showcase-left {
+            padding-top: 150px;
+
+            p {
+                font-family: $karla-font;
+                font-size: 24px;
+                color: $teal-colour;
+            }
+
+            h1 {
+                font-family: $roboto-font;
+                font-size: 80px;
+                color: $darkblue-colour;
+            }
+
+            .items-left {
+                display: flex;
+
+                .item {
+                    font-family: $karla-font;
+                    font-size: 24px;
+
+                    img {
+                        margin-left: -20px;
+                    }
+                }
+
+                .item2 {
+                    font-family: $karla-font;
+                    font-size: 24px;
+
+                    img {
+                        margin-left: 45px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ABOUT US 
+.about-us {
+    margin-top: 40px;
+    background-color: $white-colour;
+    padding-bottom: 110px;
+
+    .about-us-content {
+        display: flex;
+
+        .about-us-content-left {
+            margin-left: 80px;
+        }
+
+        .about-us-content-right {
+            margin-left: 75px;
+            margin-top: 150px;
+
+            .about-us-section-headline {
+                display: flex;
+
+                .about-us-section-headline-text {
+                    font-family: $karla-font;
+                    font-size: 16px;
+                    color: $blue-colour;
+                }
+
+                .about-us-section-headline-line {
+                    display: block;
+                    width: 70px;
+                    height: 2px;
+                    background: $blue-colour;
+                    margin-top: 13px;
+                    margin-left: 10px;
+                }
+            }
+
+            & h2 {
+                font-family: $roboto-font;
+                font-size: 60px;
+                color: $darkblue-colour;
+                margin-top: 20px;
+            }
+
+            & p {
+                color: $teal-colour;
+                line-height: 1.7;
+                font-size: 16px;
+                margin-top: 40px;
+                width: 600px;
+            }
+
+            .about-us-experience {
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+
+                .about-us-year-number {
+                    font-family: $roboto-font;
+                    font-size: 100px;
+                    color: $blue-colour;
+                }
+
+                .about-us-year-text {
+                    font-family: $roboto-font;
+                    font-size: 30px;
+                    color: $darkblue-colour;
+                    margin-left: 25px;
+                }
+            }
+        }
+
+        .aboutusleftsq {
+            position: absolute;
+            margin-left: 680px;
+            margin-top: 565px;
+            overflow: hidden;
+        }
+
+        .aboutrightsq {
+            position: absolute;
+            margin-left: 1250px;
+            margin-top: 820px;
+            overflow: hidden;
+        }
+
+        .aboutusright {
+            z-index: 2;
+            position: absolute;
+            margin-left: 1175px;
+            margin-top: -300px;
+            overflow: hidden;
+        }
+    }
+}
+
+// INTRO
+.intro {
+    background-color: $bg-dark-colour;
+    padding-bottom: 110px;
+
+    .intro-content {
+        display: flex;
+        margin-top: 40px;
+
+        .intro-content-left {
+            margin-left: 80px;
+            margin-top: 150px;
+
+            .intro-section-headline {
+                display: flex;
+
+                .intro-section-headline-text {
+                    color: $blue-colour;
+                }
+
+                .intro-section-headline-line {
+                    display: block;
+                    width: 70px;
+                    height: 2px;
+                    background: $blue-colour;
+                    margin-top: 13px;
+                    margin-left: 55px;
+                }
+            }
+
+            & h2 {
+                font-family: $roboto-font;
+                font-size: 60px;
+                color: $white-colour;
+            }
+
+            & h4 {
+                color: $teal-colour;
+                line-height: 1.7;
+                font-size: 24px;
+                margin-bottom: 40px;
+            }
+
+            & p {
+                color: $teal-colour;
+                line-height: 1.7;
+                font-size: 16px;
+                margin-bottom: 45px;
+                width: 550px;
+            }
+        }
+
+        .intro-right {
+            margin-left: 35px;
+            margin-top: 150px;
+        }
+    }
+}
+
+// BOOK A MEETING
+.book-meeting {
+    background-color: $white-colour;
+    padding-top: 150px;
+    padding-bottom: 150px;
+
+    .book-meeting-content {
+        background-color: $form-bg-colour;
+        width: 1464px;
+        margin-left: 230px;
+        padding-bottom: 120px;
+
+        & h2 {
+            font-family: $roboto-font;
+            font-size: 60px;
+            color: $white-colour;
+            text-align: center;
+            padding-top: 120px;
+            margin-bottom: 20px;
+        }
+
+        & p {
+            text-align: center;
+            font-family: $karla-font;
+            color: $form-text-colour;
+            line-height: 1.7;
+            font-size: 16px;
+            padding-bottom: 70px;
+        }
+
+        .book-meeting-content-info {
+            display: flex;
+
+            .book-meeting-content-info-name {
+                width: 560px;
+                margin-left: 150px;
+            }
+
+            .book-meeting-content-info-email {
+                width: 560px;
+                margin-left: 40px;
+            }
+
+            .form-control {
+                border: none;
+                padding: 25px 40px;
+                color: $form-text-colour;
+                background-color: $form-bg-colour;
+                border: $form-border-colour 1px solid;
+                font-family: $karla-font;
+                font-size: 16px;
+            }
+
+            .form-control::placeholder {
+                color: $form-text-colour;
+            }
+
+            .form-control:focus {
+                color: $form-text-colour;
+                box-shadow: 0 0 2px 0.05rem #6B93AA40;
+            }
+        }
+
+        .book-meeting-content-message {
+            margin-top: 30px;
+            margin-left: 150px;
+            width: 1160px;
+
+            textarea {
+                resize: none;
+            }
+
+            .form-control {
+                border: none;
+                padding: 25px 40px;
+                color: $form-text-colour;
+                background-color: $form-bg-colour;
+                border: $form-border-colour 1px solid;
+                font-family: $karla-font;
+                font-size: 16px;
+            }
+
+            .form-control::placeholder {
+                color: $form-text-colour;
+            }
+
+            .form-control:focus {
+                color: $form-text-colour;
+                box-shadow: 0 0 2px 0.05rem #6B93AA40;
+            }
+        }
+
+        .book-meeting-content-submit {
+            margin-left: 610px;
+            margin-top: 50px;
+        }
+    }
+}
+
+// FOOTER
+.footer {
+    background-color: $footer-darkblue-colour;
+    background-image: url("../img/FooterBigCircle.svg");
+    background-repeat: no-repeat;
+    background-position-x: -375px;
+    background-position-y: 270px;
+    color: $footer-text;
+    padding-top: 100px;
+
+    .footer-content {
+        display: flex;
+
+        .footer-content-left {
+            width: 350px;
+            margin-left: 80px;
+
+            & h4 {
+                color: $white-colour;
+                margin-bottom: 2rem;
+                font-size: 40px;
+                font-family: $roboto-font;
+            }
+
+            & p {
+                color: $footer-text;
+            }
+        }
+
+        .footer-content-right {
+            width: 350px;
+            margin-left: 450px;
+
+            & h4 {
+                color: $white-colour;
+                margin-bottom: 2rem;
+                font-size: 40px;
+                font-family: $roboto-font;
+            }
+
+            ul {
+                list-style-type: none;
+                padding: 0 0 40px 0px;
+                margin: 0;
+                font-size: 20px;
+                font-family: $karla-font;
+            }
+
+            li {
+                margin-bottom: 8px;
+            }
+
+            & p {
+                color: $footer-text;
+
+                & span {
+                    color: $white-colour;
+                }
+            }
+        }
+    }
+
+    .footer-border-top {
+        border-top: 1px solid #707070;
+        margin-top: 150px;
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+
+    .footer-border-text {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        text-align: center;
+    }
+
+    .footer-big-circle {
+        position: absolute;
+        overflow: hidden;
+        margin-top: -350px;
+        margin-left: -370px;
+    }
+
+    .footer-circles {
+        position: absolute;
+        margin-left: 1550px;
+        margin-top: -220px;
+    }
+}
+
+// VIEWS
+.page-headline {
+    display: flex;
+    justify-content: center;
+    padding-top: 140px;
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 5%, rgba(169,199,236,1) 100%);
+
+    .content-no-headline {
+        margin: 15px;
+    }
+
+    .content {
+        margin: 135px;
+        text-align: center;
+
+        h1 {
+            font-size: 80px;
+            color: $darkblue-colour;
+            font-family: $roboto-font;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            font-size: 24px;
+            color: $teal-colour;
+
+            a {
+                margin: 0 1rem;
+            }
+        }
+    }
+}
+
+// CONTACT
+.get-in-touch {
+    background-color: $contact-bg-colour;
+    padding-bottom: 110px;
+
+    .get-in-touch-content {
+        display: flex;
+
+        .get-in-touch-content-left {
+            margin-left: 80px;
+            margin-top: 110px;
+
+            .get-in-touch-section-headline {
+                display: flex;
+
+                .get-in-touch-section-headline-text {
+                    color: $blue-colour;
+                }
+
+                .get-in-touch-section-headline-line {
+                    display: block;
+                    width: 70px;
+                    height: 2px;
+                    background: $blue-colour;
+                    margin-top: 13px;
+                    margin-left: 20px;
+                }
+            }
+
+            & h2 {
+                font-family: $roboto-font;
+                font-size: 60px;
+                color: $darkblue-colour;
+                margin-top: 30px;
+            }
+
+            .form-group {
+                margin-bottom: 15px;
+                width: 550px;
+            }
+
+            .form-control {
+                padding: 25px 40px;
+                color: $form-border-colour;
+                background-color: $white-colour;
+                font-family: $karla-font;
+                font-size: 16px;
+            }
+
+            & textarea {
+                resize: none;
+            }
+
+            .get-in-touch-submit {
+                margin-top: 30px;
+
+                & input {
+                    padding: 25px 60px;
+                }
+            }
+        }
+
+        .get-in-touch-content-right {
+            margin-left: 100px;
+            margin-top: 165px;
+        }
+    }
+}
+
+// SERVICES
+.services {
+    background-color: $white-colour;
+    padding-bottom: 110px;
+    margin-top: 130px;
+
+    .services-row {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px;
+
+        .card {
+            position: relative;
+            width: 370px;
+            height: 300px;
+            background-color: $card-bg-colour;
+            margin-left: 15px;
+            margin-right: 15px;
+
+            .card-bottom {
+                font-family: $roboto-font;
+                font-size: 20px;
+                text-align: center;
+                padding-top: 22px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 70px;
+                z-index: 1;
+                background-color: $darkblue-colour;
+                color: $white-colour;
+            }
+
+            .card-square {
+                width: 70px;
+                height: 70px;
+                background-color: $blue-colour;
+                z-index: 2;
+                position: absolute;
+                bottom: 20px;
+                left: 20px;
+            }
+
+            .card-bottom-special {
+                font-family: $roboto-font;
+                font-size: 20px;
+                text-align: center;
+                padding-top: 22px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 180px;
+                z-index: 1;
+                background: rgb(96,171,255);
+                background: linear-gradient(180deg, rgba(96,171,255,1) 5%, rgba(0,102,255,1) 100%);
+                color: $white-colour;
+
+                & p {
+                    text-align: left;
+                    font-size: 14px;
+                    margin-left: 35px;
+                    margin-right: 35px;
+                    margin-top: 25px;
+                    line-height: 2;
+                }
+            }
+
+            .card-square-special {
+                width: 70px;
+                height: 70px;
+                background-color: $blue-colour;
+                z-index: 2;
+                position: absolute;
+                bottom: 130px;
+                left: 20px;
+            }
+        }
+    }
+}
+
+// VALIDATION
+.error-img {
+    margin-top: 200px;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.error-headline {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    & h2 {
+        color: $darkblue-colour;
+        font-family: $roboto-font;
+        font-size: 80px;
+    }
+
+    & p {
+        color: $teal-colour;
+        font-family: $karla-font;
+        font-size: 24px;
+        margin-bottom: 200px;
+    }
+}
+
+.input-box {
+
+    & input, & textarea {
+        border: none;
+    }
+
+    & small {
+        visibility: hidden;
+        color: red;
+        font-size: small;
+        font-weight: 300;
+    }
+}
+
+.input-box.error {
+
+    & input, & textarea {
+        border: 1px solid red;
+    }
+
+
+    & small {
+        visibility: visible;
+    }
+}
+
+.input-box.success {
+
+    & input, & textarea {
+        border: 1px solid green;
+    }
+
+    & small {
+        visibility: hidden;
+    }
+}
+
+// AUTH
+.auth-content {
+    background-color: $contact-bg-colour;
+    padding-bottom: 110px;
+    padding-top: 130px;
+
+    .register-firstname {
+        padding-right: 10px;
+    }
+
+    .register-lastname {
+        padding-left: 10px;
+    }
+}
+
+.users-content {
+    background-color: $white-colour;
+    padding-bottom: 110px;
+    padding-top: 130px;
+}
+
+.roles-content {
+    background-color: $white-colour;
+    padding-bottom: 110px;
+    padding-top: 130px;
+}
+
+.register-error {
+    margin-top: 5px;
+    color: red;
+    font-weight: 700;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.role-link {
+    margin-left: 160px;
+}
+
+// EDIT PROFILE
+.edit-user-content {
+    background-color: $contact-bg-colour;
+    padding-bottom: 110px;
+    padding-top: 130px;
+
+    .edit-user-role {
+        padding-right: 10px;
+    }
+
+    .edit-user-firstname {
+        padding-right: 10px;
+    }
+
+    .edit-user-lastname {
+        padding-left: 10px;
+    }
+
+    .edit-user-postcode {
+        padding-right: 10px;
+    }
+
+    .edit-user-city {
+        padding-left: 10px;
+    }
+}
+
+.edit-profile {
+    background-color: $white-colour;
+    padding-bottom: 110px;
+    padding-top: 130px;
+}
+
+// ACCESS DENIED
+.access-denied-img {
+    margin-top: 200px;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+    font-size: 100px;
+    font-weight: 600;
+    color: red;
+}

@@ -1,0 +1,151 @@
+﻿@model ContactViewModel
+@{
+    ViewData["Title"] = "Home Page";
+    ViewData["ShowNavBar"] = true;
+}
+@section Scripts {
+    <script src="~/js/validate.js"></script>
+    @*<script src="~/js/validate_name.js"></script>
+    <script src="~/js/validate_email.js"></script>
+    <script src="~/js/validate_message.js"></script>*@
+    <script src="~/js/validate_contact.js"></script>
+}
+<!-- SHOWCASE START  -->
+<section class="showcase bg-blue-gradient">
+    <div class="container">
+        <div class="showcase-content">
+
+            <div class="showcase-left">
+                <p>Promote any product, service or online course.</p>
+                <h1>Get every it Services Here</h1>
+
+                <div class="items-left">
+                    <div class="item">
+                        <img src="img/red-circle.svg" alt="Red circle">
+                        <span>IT Product</span>
+                    </div>
+                    <div class="item2">
+                        <img src="img/blue-circle.svg" alt="Blue circle">
+                        <span>IT Services</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="showcase-right">
+                <img class="showcase-image" src="img/person-male.svg" alt="Person male">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT US START -->
+<section class="about-us">
+    <div class="container">
+        <div class="about-us-content">
+            <div class="about-us-content-left">
+                <img src="img/about-us.svg">
+            </div>
+            <div class="about-us-content-right">
+                <div class="about-us-section-headline">
+                    <div class="about-us-section-headline-text">About Us</div>
+                    <div class="about-us-section-headline-line"> </div>
+                </div>
+
+                <h2>You can't use up<br>creativity.</h2>
+                <p>
+                    Does any industry face a more complex audience journey and marketing sales process than B2B technology? Consider the number of people who influence<br>a sale, the length of the decision-making cycle, the competing interests of the people who purchase, implement, manage, and use the technology. It’s a lot meaningful content here.
+                </p>
+
+                <div class="about-us-experience">
+                    <div class="about-us-year-number">15</div>
+                    <div class="about-us-year-text">Years Of<br>Experience</div>
+                </div>
+
+                <div>
+                    <a href="#" class="btn btn-main">Learn More</a>
+                    <a href="#" class="btn btn-intro-video">Intro Video</a>
+                </div>
+            </div>
+            <img class="aboutusleftsq" src="img/aboutusleftsq.svg" alt="">
+            <img class="aboutrightsq" src="img/aboutusrightsqbg.svg" alt="">
+            <img class="aboutusright" src="img/about-us-right.svg" alt="">
+        </div>
+    </div>
+</section>
+
+<!-- INTRO START -->
+<section class="intro">
+    <div class="container">
+
+        <div class="intro-content">
+
+            <div class="intro-content-left">
+
+                <div class="intro-section-headline">
+                    <div class="intro-section-headline-text">Intro</div>
+                    <div class="intro-section-headline-line"></div>
+                </div>
+
+                <h2>How we growth<br>our business.</h2>
+                <h4>The introduction of cloud and mobile technologies<br>into enterprise software.</h4>
+
+                <p>
+                    Whether you are building an enterprise web portal or a state-of-the-art website, you always need the right modern tools. Well-built and maintained .NET frameworks provide those tools in abundance, allowing maintained .NET frameworks provide those tools in abundance, allowing developers to save time, re-use code, and streamline the back end. As software development tools continuously.
+                </p>
+
+                <div>
+                    <a href="#" class="btn btn-main">Learn More</a>
+                </div>
+            </div>
+
+            <div class="intro-right">
+                <img src="~/img/intro.svg">
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- BOOK A MEETING START -->
+
+<section class="book-meeting">
+    <div>
+
+        <div class="book-meeting-content">
+            <h2>Book a Meeting</h2>
+            <p>Does any industry face a more complex audience journey and<br>marketing sales process than B2B technology.</p>
+
+            <form method="post" onsubmit="return validateFormOnSubmit();">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="book-meeting-content-info">
+                    <div class="book-meeting-content-info-name">
+                        <div class="form-group input-box">
+                            <input id="name" type="text" asp-for="Name" class="form-control" placeholder="Enter your name">
+                            <small>Error</small>
+                        </div>
+                    </div>
+
+                    <div class="book-meeting-content-info-email">
+                        <div class="form-group input-box">
+                            <input id="email" type="email" asp-for="Email" class="form-control" placeholder="Enter your email">
+                            <small> <span asp-validation-for="Email" class="text-danger"></span> </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-meeting-content-message">
+                    <div class="form-group input-box">
+                        <textarea id="message" asp-for="Message" class="form-control" rows="8" placeholder="Enter your questions & subject here."></textarea>
+                        <small>Error</small>
+                    </div>
+                </div>
+
+                <div class="book-meeting-content-submit">
+                    <input id="submitform" type="submit" class="btn btn-main" value="Book a Meeting Now">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
